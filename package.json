@@ -1,0 +1,31 @@
+{
+  "name": "live-audio",
+  "version": "1.0.0",
+  "description": "thing",
+  "main": "index.js",
+  "author": "someone",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "audio-analyser": "^1.0.2",
+    "canvas": "^1.6.5",
+    "chroma-js": "^1.3.4",
+    "color-thief": "^2.2.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "get-image-colors": "^1.8.1",
+    "leftpad": "^0.0.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "simple-youtube-api": "^2.1.0",
+    "speaker": "^0.3.0",
+    "streamifier": "^0.1.1",
+    "ytdl-core": "^0.14.4"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^1.3.0",
+    "@types/fluent-ffmpeg": "^2.1.1",
+    "@types/node": "^8.0.16",
+    "@types/request-promise": "^4.1.36",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  }
+}
