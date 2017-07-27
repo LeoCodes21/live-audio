@@ -1,4 +1,10 @@
-/// <reference path='types/simple-youtube-api.d.ts' />
+/*
+ * Live-Audio
+ * Copyright (c) 2017 heyitsleo <coderleo42@gmail.com>
+ * Not licensed.
+ */
+
+/// <reference path='../types/simple-youtube-api.d.ts' />
 
 import * as YouTube from 'simple-youtube-api';
 

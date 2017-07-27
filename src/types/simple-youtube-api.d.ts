@@ -2,10 +2,6 @@ declare module "simple-youtube-api" {
     class YouTube {
         constructor(key: string);
 
-        Video: YouTube.Video;
-        Channel: YouTube.Channel;
-        Playlist: YouTube.Playlist;
-
         request(endpoint: string, qs: object): Promise<object>;
 
         getVideo(url: string): Promise<YouTube.Video>;
@@ -30,7 +26,7 @@ declare module "simple-youtube-api" {
     }
     
     namespace YouTube {
-        class Video {
+        export class Video {
             constructor(youtube: YouTube, data: object);
 
             youtube: YouTube;
@@ -40,6 +36,7 @@ declare module "simple-youtube-api" {
             description: string;
             publishedAt: Date;
             duration?: any;
+            channel: Channel;
 
             url: string;
             shortURL: string;
@@ -48,7 +45,7 @@ declare module "simple-youtube-api" {
             static extractID(url: string): string;
         }
 
-        class Channel {
+        export class Channel {
             constructor(youtube: YouTube, data: object);
 
             youtube: YouTube;
@@ -60,7 +57,7 @@ declare module "simple-youtube-api" {
             static extractID(url: string): string;
         }
 
-        class Playlist {
+        export class Playlist {
             constructor(youtube: YouTube, data: object);
 
             youtube: YouTube;

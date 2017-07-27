@@ -42,7 +42,7 @@ process.on('message', (msg) => {
             const rawColor = colors[i % colors.length];
             const color = chroma(rawColor[0], rawColor[1], rawColor[2], rawColor[3]);
             
-            ctx.fillStyle = `rgb(${color.rgb()[0]},50,50)`;
+            ctx.fillStyle = `rgb(${color.rgb().join(',')}`;
             // ctx.fillStyle = `rgb(${Math.floor(barHeight + 100)},50,50)`;
             ctx.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight / 2);
 

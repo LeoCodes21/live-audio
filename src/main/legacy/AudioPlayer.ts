@@ -4,8 +4,8 @@
  * Not licensed.
  */
 
-/// <reference path='types/speaker.d.ts' />
-/// <reference path='types/audio-analyser.d.ts' />
+/// <reference path='../../types/speaker.d.ts' />
+/// <reference path='../../types/audio-analyser.d.ts' />
 
 import * as ytdl from 'ytdl-core';
 import * as child_process from 'child_process';
@@ -14,9 +14,8 @@ import * as Analyser from 'audio-analyser';
 import * as path from "path";
 
 export default class AudioPlayer {
-    constructor(private colors: any[]) {
-        
-    }
+    // any[] because chroma.js doesn't export anything except ChromaStatic
+    constructor(private colors: any[]) { }
     
     /**
      * Play a song.
