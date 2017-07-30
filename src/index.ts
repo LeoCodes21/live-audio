@@ -29,7 +29,9 @@ const options = yargs
 // Get the URL from the first parameter
 const url = options._[0];
 
+const arduinoEnabled = options.arduino || false;
+
 new MainModule(
     utils.loadConfig(configPath).googleApiKey, url,
-    options.arduino || false
+    arduinoEnabled
 ).start();

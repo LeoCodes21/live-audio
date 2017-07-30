@@ -4,8 +4,8 @@
  * Not licensed.
  */
 
-/// <reference path='../../types/speaker.d.ts' />
-/// <reference path='../../types/audio-analyser.d.ts' />
+/// <reference path='../../types/audio/speaker.d.ts' />
+/// <reference path='../../types/audio/audio-analyser.d.ts' />
 
 import * as ytdl from 'ytdl-core';
 import * as child_process from 'child_process';

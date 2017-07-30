@@ -20,3 +20,7 @@ export function warn(msg: chalk.ChalkChain | string) : void {
 export function error(msg: chalk.ChalkChain | string) : void {
     fancyLog.error(`${chalk.bgRed.black('[error]')} ${msg}`);
 }
+
+export function debug(msg: chalk.ChalkChain | string) : void {
+    fancyLog.info(`${chalk.bgBlue.black('[debug]')} ${msg}`);
+}

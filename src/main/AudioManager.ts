@@ -10,6 +10,8 @@ interface AudioManager {
     start(url: string): void;
 
     getName(): string;
+    
+    readonly analyser: AudioAnalyser;
 }
 
 declare let AudioManager: {
