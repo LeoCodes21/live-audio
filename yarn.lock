@@ -1757,6 +1757,12 @@ sax@^1.1.3:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
+scale-number-range@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/scale-number-range/-/scale-number-range-1.0.3.tgz#e88ef3db15d389f97c41b0b6d7e0447c6d84dec7"
+  dependencies:
+    debug "^2.2.0"
+
 scijs-window-functions@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/scijs-window-functions/-/scijs-window-functions-2.0.2.tgz#58e5dc90b52ae729a53a37faf3cf6d44f5775942"

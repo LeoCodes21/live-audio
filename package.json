@@ -21,6 +21,7 @@
     "node-pixel": "^0.9.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
+    "scale-number-range": "^1.0.3",
     "simple-youtube-api": "^2.1.0",
     "speaker": "^0.3.0",
     "streamifier": "^0.1.1",

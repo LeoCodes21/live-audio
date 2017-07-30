@@ -12,7 +12,8 @@ export function runFfmpeg(inputStream: Readable) : ChildProcess {
         '-f', 's16le', // signed 16-bit little-endian PCM
         '-ac', '2', // 2 channels
         '-ar', '44100', // 44,100 kHZ
-        '-map', 'a', // audio only
+        '-map', 'a', // audio only,
+        '-progress', 'pipe:2', // pipe progress info to stderr
         '-' // output to stdout 
     ]);
 

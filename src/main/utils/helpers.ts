@@ -47,3 +47,11 @@ export function resolveAfter(millis: number) : Promise<void> {
        setTimeout(() => resolve(), millis); 
     });
 }
+
+export function arrayAverage(array: number[]): number {
+    return array.reduce((p, c) => p + c, 0);
+}
+
+export function clampNumber(value: number, min: number, max: number): number {
+    return Math.max(min, Math.min(value, max));
+}
