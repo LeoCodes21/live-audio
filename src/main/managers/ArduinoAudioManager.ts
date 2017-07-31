@@ -35,7 +35,7 @@ export default class ArduinoAudioManager extends EventEmitter implements AudioMa
 
         this.audioAnalyser.init(process.stdout);
 
-        logger.debug(`Piping to speaker`);
+        process.stdout.pipe(this.speaker);
     }
 
     getName(): string {
@@ -44,8 +44,6 @@ export default class ArduinoAudioManager extends EventEmitter implements AudioMa
 
     private startFFmpegProcess(ytdlStream: Readable) : ChildProcess {
         const process = runFfmpeg(ytdlStream);
-
-        process.stdout.pipe(this.speaker);
 
         // process.stderr.on('data', function (data) {
         //     const tLines = data.toString().split('\n');
@@ -63,7 +61,11 @@ export default class ArduinoAudioManager extends EventEmitter implements AudioMa
         //
         process.on('exit', () => {
             logger.info(`FFmpeg exited`);
+            process.stdout.unpipe(this.analyser.getAnalyzer());
             process.stdout.unpipe(this.speaker);
+            
+            this.speaker.end();
+            this.emit('ended');
         });
         
         return process;

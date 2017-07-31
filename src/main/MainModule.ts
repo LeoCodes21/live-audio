@@ -33,7 +33,7 @@ export default class MainModule {
 
             utils.extractColors(video.id).then(async colors => {
                 if (audioManager instanceof ArduinoAudioManager) {
-                    await new ArduinoModule(audioManager, utils.normalizeChromaColors(colors)).start();
+                    await new ArduinoModule(audioManager, utils.normalizeChromaColors(colors.palette), colors.dominant).start();
                 }
 
                 audioManager.start(this.videoUrl); 

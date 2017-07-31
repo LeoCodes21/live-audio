@@ -4,20 +4,19 @@
  * Not licensed.
  */
 
-import ArduinoAudioManager from "../main/managers/ArduinoAudioManager";
-import { default as startBot } from './bot';
-import { normalizeArrayColors } from "../main/utils/helpers";
+import ArduinoAudioManager from '../main/managers/ArduinoAudioManager';
+import { normalizeArrayColors, ChromaColor } from '../main/utils';
+import ArduinoController from './controller';
 
 export default class ArduinoModule {
-    private colors;
-    private mainColor;
+    private colors: ChromaColor[];
     
-    constructor(private audioManager: ArduinoAudioManager, colors: [number, number, number][]) {
+    constructor(private audioManager: ArduinoAudioManager, colors: [number, number, number][], private dominantColor: ChromaColor) {
         this.colors = normalizeArrayColors(colors);
-        this.mainColor = this.colors[0];
     }
     
     start() : Promise<void> {
-        return startBot(this.audioManager, this.colors);
+        return new ArduinoController(this.audioManager, this.colors, this.dominantColor)
+            .start();
     }
 }
